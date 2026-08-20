@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.version = Pacman::VERSION
   spec.summary = "A Charming terminal user interface."
   spec.authors = ["Pando"]
-  spec.email = ["pandorocks@proton.me"]
+  spec.email = ["lbpdevcodes@proton.me"]
   spec.homepage = "https://charming.sh/docs/examples/pacman/"
   spec.license = "MIT"
   spec.files = Dir.glob("{app,config,db,exe,lib}/**/*") + %w[README.md LICENSE.txt]

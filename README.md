@@ -1,6 +1,6 @@
 # Pacman
 
-A Pacman arcade clone built with the [Charming](https://github.com/pandorocks/charming)
+A Pacman arcade clone built with the [Charming](https://github.com/lbpdevcodes/charming)
 terminal UI framework.
 
 ## Screenshots
