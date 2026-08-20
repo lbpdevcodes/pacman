@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
   spec.required_ruby_version = ">= 4.0.0"
   spec.metadata["rubygems_mfa_required"] = "true"
-  spec.add_dependency "charming"
+  spec.add_dependency "charming", "~> 0.4.0"
   spec.add_dependency "sqlite3", "~> 2.0"
   spec.add_dependency "activerecord", "~> 8.1"
 end

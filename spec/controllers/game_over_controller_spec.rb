@@ -42,7 +42,7 @@ RSpec.describe Pacman::GameOverController do
       response = controller.dispatch(:restart)
 
       expect(response.navigate?).to be(true)
-      expect(response.path).to eq("/game")
+      expect(response.name).to eq(:game)
     end
   end
 end

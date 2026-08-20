@@ -8,7 +8,7 @@ module Pacman
 
         Charming::UI.center(
           column(
-            render_component(HudComponent.new(world: world)),
+            render_component(HudComponent.new(world: world, theme: theme)),
             render_component(BoardComponent.new(world: world, scale: board_scale.factor)),
             gap: 1
           ),

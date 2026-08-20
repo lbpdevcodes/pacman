@@ -29,7 +29,7 @@ RSpec.describe Pacman::HomeController do
       response = controller.dispatch(:start_game)
 
       expect(response.navigate?).to be(true)
-      expect(response.path).to eq("/game")
+      expect(response.name).to eq(:game)
     end
   end
 end

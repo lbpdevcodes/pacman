@@ -49,7 +49,7 @@ module Pacman
       summary.level = world.level
       HighScore.create!(name: "PLAYER", score: world.score)
       game.world = nil
-      navigate_to "/game_over"
+      navigate :game_over
     end
 
     def turn(direction)

@@ -14,7 +14,7 @@ module Pacman
 
     def restart
       state(:game, GameState).world = nil
-      navigate_to "/game"
+      navigate :game
     end
 
     private

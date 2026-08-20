@@ -60,7 +60,7 @@ RSpec.describe Pacman::GameController do
       end
 
       expect(responses.last.navigate?).to be(true)
-      expect(responses.last.path).to eq("/game_over")
+      expect(responses.last.name).to eq(:game_over)
       expect(application.session[:states][:game_over].score).to eq(doomed.score)
     end
   end
@@ -71,13 +71,13 @@ RSpec.describe Pacman::GameController do
       tick = Charming::Events::TimerEvent.new(name: :tick, now: 0)
       start = Pacman::Arcade::World.classic.player.position
 
-      first = described_class.new(application: application, screen: big_screen, event: tick)
-        .dispatch_timer
+      first = described_class.new(application: application, screen: big_screen)
+        .dispatch_timer(tick)
       world = application.session[:states][:game].world
       expect(first).to be_nil
       expect(world.player.position).to eq(start)
 
-      described_class.new(application: application, screen: big_screen, event: tick).dispatch_timer
+      described_class.new(application: application, screen: big_screen).dispatch_timer(tick)
       expect(world.player.position).not_to eq(start)
     end
   end

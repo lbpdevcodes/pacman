@@ -9,7 +9,8 @@ RSpec.describe Pacman::Game::ShowView do
     it "asks for a bigger terminal instead of rendering a broken board" do
       view = described_class.new(
         world: Pacman::Arcade::World.classic,
-        screen: Charming::Screen.new(width: 30, height: 10)
+        screen: Charming::Screen.new(width: 30, height: 10),
+        theme: Pacman::Application.new.theme
       )
 
       expect(view.render).to include("Terminal too small")
@@ -18,7 +19,8 @@ RSpec.describe Pacman::Game::ShowView do
     it "scales the board up and centers it on a large screen" do
       view = described_class.new(
         world: Pacman::Arcade::World.classic,
-        screen: Charming::Screen.new(width: 100, height: 40)
+        screen: Charming::Screen.new(width: 100, height: 40),
+        theme: Pacman::Application.new.theme
       )
 
       lines = strip_ansi(view.render).split("\n")
@@ -30,7 +32,10 @@ RSpec.describe Pacman::Game::ShowView do
     end
 
     it "stacks the HUD above the maze board" do
-      view = described_class.new(world: Pacman::Arcade::World.classic)
+      view = described_class.new(
+        world: Pacman::Arcade::World.classic,
+        theme: Pacman::Application.new.theme
+      )
 
       rendered = strip_ansi(view.render)
 

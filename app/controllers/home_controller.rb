@@ -10,7 +10,7 @@ module Pacman
     end
 
     def start_game
-      navigate_to "/game"
+      navigate :game
     end
 
     private
